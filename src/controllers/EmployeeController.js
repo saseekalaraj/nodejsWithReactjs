@@ -9,16 +9,6 @@ controllers.testdata = (req, res) => {
     .sync()
     .then(function() {
       //temp data
-      Role.create({
-        role: "Admin"
-      });
-      Employee.create({
-        name: "sasee",
-        email: "sasee9488@gmail.com",
-        address: "jaffna",
-        phone: "0776445624",
-        roleId: 1
-      });
       const data = Employee.findAll();
       return data;
     })
@@ -28,9 +18,7 @@ controllers.testdata = (req, res) => {
   res.json({
     success: true,
     data: response
-  });
-  console.log(response);
-  
+  });  
 };
 controllers.test = (req, res) => {
   const data = {
